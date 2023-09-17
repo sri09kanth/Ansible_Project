@@ -2,7 +2,7 @@
 - name: Install Nginx
   apt:
     name: nginx
-    state: present  # Use 'yum' instead of 'apt' for CentOS/Fedora
+    state: present  
 
 - name: Start Nginx Service
   service:
@@ -11,7 +11,7 @@
 
 - name: Copy HTML content file to document root
   copy:
-    src: files/generic_content.html
+    src: files/index.html
     dest: /usr/share/nginx/html/index.html
   notify:
     - Restart Nginx
