@@ -1,17 +1,10 @@
----
-- name: Install Nginx
-  apt:
-    name: nginx
-    state: present  
-
-- name: Start Nginx Service
-  service:
-    name: nginx
-    state: started
-
-- name: Copy HTML content file to document root
-  copy:
-    src: files/index.html
-    dest: /usr/share/nginx/html/index.html
-  notify:
-    - Restart Nginx
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generic Website</title>
+</head>
+<body>
+    <h1>Welcome/h1>
+    <p>This is a generic webpage created with Ansible and Nginx.</p>
+</body>
+</html>
